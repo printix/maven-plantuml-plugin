@@ -1,90 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <artifactId>plantuml-maven-plugin</artifactId>
-  <version>1.2-SNAPSHOT</version>
-  <packaging>maven-plugin</packaging>
-
-  <name>Maven PlantUML plugin</name>
-  <inceptionYear>2011</inceptionYear>
-  <description>
-    A maven plugin to generate UML diagrams using PlantUML syntax
-  </description>
-
-  <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.jeluard</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>9</version>
-  </parent>
+    <artifactId>plantuml-maven-plugin</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+    <packaging>maven-plugin</packaging>
 
-  <properties>
-    <javaAnimalSniffer.version>17</javaAnimalSniffer.version>
-  </properties>
+    <name>Maven PlantUML plugin</name>
+    <inceptionYear>2011</inceptionYear>
+    <description>
+        A maven plugin to generate UML diagrams using PlantUML syntax
+    </description>
 
-  <dependencies>
-    <dependency>
-      <groupId>net.sourceforge.plantuml</groupId>
-      <artifactId>plantuml</artifactId>
-      <version>8031</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-plugin-api</artifactId>
-      <version>3.0.4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-model</artifactId>
-      <version>3.0.4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-utils</artifactId>
-      <version>3.0.8</version>
-    </dependency>
-  </dependencies>
+    <properties>
+        <javaAnimalSniffer.version>17</javaAnimalSniffer.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <java.version>11</java.version>
 
-  <developers>
-    <developer>
-      <id>jeluard</id>
-      <name>Julien Eluard</name>
-    </developer>
-    <developer>
-      <id>vanuan</id>
-      <name>John Yani</name>
-    </developer>
-    <developer>
-      <id>matling</id>
-      <name>Mattias Lingdell</name>
-    </developer>
-  </developers>
+    </properties>
 
-  <scm>
-    <connection>scm:git:git@github.com:jeluard/maven-plantuml-plugin</connection>
-    <developerConnection>scm:git:git@github.com:jeluard/maven-plantuml-plugin</developerConnection>
-    <url>scm:git:git@github.com:jeluard/maven-plantuml-plugin</url>
-    <tag>HEAD</tag>
-  </scm>
+    <dependencies>
+        <dependency>
+            <groupId>net.sourceforge.plantuml</groupId>
+            <artifactId>plantuml</artifactId>
+            <version>1.2020.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-api</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-model</artifactId>
+            <version>3.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+    </dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-plugin-plugin</artifactId>
-        <version>3.2</version>
-      </plugin>
-      <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+    <developers>
+        <developer>
+            <id>jeluard</id>
+            <name>Julien Eluard</name>
+        </developer>
+        <developer>
+            <id>vanuan</id>
+            <name>John Yani</name>
+        </developer>
+        <developer>
+            <id>matling</id>
+            <name>Mattias Lingdell</name>
+        </developer>
+        <developer>
+            <id>vruum</id>
+            <name>Peter Holtegaard Nielsen</name>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:printix/maven-plantuml-plugin</connection>
+        <developerConnection>scm:git:git@github.com:printix/maven-plantuml-plugin</developerConnection>
+        <url>scm:git:git@github.com:printix/maven-plantuml-plugin</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-plugin-plugin</artifactId>
+                <version>3.6.0</version>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

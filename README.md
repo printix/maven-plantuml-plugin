@@ -1,10 +1,6 @@
-*This project is not maintained anymore*
-
 A [maven](http://maven.apache.org/) plugin to generate UML diagrams using [PlantUML](http://plantuml.sourceforge.net/) syntax.
-
-# Important note
-
-If you want to use versions of PlantUML greater than 8031 you have to use version 1.2 of this plugin.
+Forked from https://github.com/jeluard/maven-plantuml-plugin. Updated dependencies, removed parent reference, and fixed a few issues 
+with newer plantUML versions
 
 # Usage
 

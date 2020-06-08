@@ -181,9 +181,7 @@ public final class PlantUMLMojo extends AbstractMojo {
       if (this.config != null) {
         this.option.initConfig(this.config);
       }
-      if (this.keepTmpFiles) {
-        OptionFlags.getInstance().setKeepTmpFiles(this.keepTmpFiles);
-      }
+
       if (this.graphvizDot != null) {
         OptionFlags.getInstance().setDotExecutable(this.graphvizDot);
       }
@@ -248,10 +246,10 @@ public final class PlantUMLMojo extends AbstractMojo {
   }
   
   private FileFormatOption getFileFormatOption() {
-    FileFormatOption formatOptions = new FileFormatOption(this.option.getFileFormat(), this.withMetadata);
+    FileFormatOption formatOptions = new FileFormatOption(this.option.getFileFormatOption().getFileFormat(), this.withMetadata);
     if (formatOptions.isWithMetadata() != withMetadata){
       // Workarround to error in plantUML where the withMetadata flag is not correctly applied.
-      return new FileFormatOption(this.option.getFileFormat());
+      return new FileFormatOption(this.option.getFileFormatOption().getFileFormat());
     }
     return formatOptions;
   }
